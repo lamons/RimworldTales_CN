@@ -14,7 +14,7 @@ indexfile = ["""<!DOCTYPE html>
         <h1> Rimworld Tales 边缘世界物语 </h1>
         <span>汉化版</span>
         <p>
-            原作者：<a href="https://srgrafo.com/">SrGrafo</a> ・<a href="https://srgrafo.com/home">漫画原作</a>・<a href="https://www.patreon.com/SrGrafo">赞助原作者</a>
+            原作者：<a href="https://srgrafo.com/">SrGrafo</a> ・<a href="https://srgrafo.com/home">漫画原作</a>・<a href="https://www.patreon.com/SrGrafo">赞助他</a>
         </p>
         <img src="img/cover.png">
         <h2>目录</h2>
@@ -43,7 +43,7 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
             if int(lines["picid"]) == 121:
                 file.write("</p>")
             else:
-                file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a>・<a href=\"https://srgrafo.com/comic/" + lines["picid"] + "\">原版链接</a></p>")
+                file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a>・<a href=\"https://srgrafo.com/comic/" + lines["picid"] + "\">原版链接</a>・<a href=\"../index.html\">回目录</a></p>")
             if lines["music"]:
                 file.write("<p><a href=\"" + lines["music"] + "\">建议配乐</a></p>")
             file.write("<div style=\"text-align:center;\"><img src=\"../img/" + lines["picid"] + ".png" "\"></div>")
