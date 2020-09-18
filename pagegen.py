@@ -16,7 +16,7 @@ indexfile = ["""<!DOCTYPE html>
         <p>
             原作者：<a href="https://srgrafo.com/">SrGrafo</a> ・<a href="https://srgrafo.com/home">漫画原作</a>・<a href="https://www.patreon.com/SrGrafo">赞助原作者</a>
         </p>
-        <img style="width: 100%"src="img/cover.png">
+        <img src="img/cover.png">
         <h2>目录</h2>
 """]
 
