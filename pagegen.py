@@ -1,6 +1,22 @@
 #coding: utf8
 
 import csv
+
+file2=open("index.html", "w+")
+indexfile = ["""<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1> Rimworld Tales 边缘世界物语 </h1>
+        <span>汉化版</span>
+        <p>
+            原作者：<a href="https://srgrafo.com/">SrGrafo</a> ・<a href="https://srgrafo.com/home">漫画原作</a>・<a href="https://www.patreon.com/SrGrafo">赞助原作者</a>
+        </p>
+        <img src="img/cover.png">
+        <h2>目录</h2>
+"""]
+
 with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
     csvdb = csv.DictReader(csvfile)
     for lines in csvdb:
@@ -11,8 +27,10 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
             file.write("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n</head>\r\n<body>\r\n")
             if (lines["episode"].isnumeric()) == True:
                 file.write("<h3>" + lines["episode"] + ". " + lines["chinese_title"] + "</h3>\r\n")
+                indexfile.append("<a href=\"pages/" + lines["picid"] + ".html\">" + lines["episode"] + "." + lines["chinese_title"] + "</a><br />\r\n")
             else:
                 file.write("<h3>" + lines["chinese_title"] + "</h3>\r\n")
+                indexfile.append("<a href=\"pages/" + lines["picid"] + ".html\">" + lines["chinese_title"] + "</a><br />\r\n")
             if int(lines["picid"]) == 1:
                 file.write("")
             elif int(lines["picid"]) == 121:
@@ -38,5 +56,9 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
                 file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a></p>")
             file.close()
 
-            file2=open("index.html", "w+")
-                file2.write()
+indexfile.append("""	</body>
+</hmtl>""")
+
+indexhtml = ''.join(indexfile)
+file2.write(indexhtml)
+file2.close()
