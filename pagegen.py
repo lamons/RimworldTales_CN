@@ -36,3 +36,7 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
                 file.write("</p>")
             else:
                 file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a></p>")
+            file.close()
+
+            file2=open("index.html", "w+")
+                file2.write()
