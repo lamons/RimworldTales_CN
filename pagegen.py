@@ -7,7 +7,7 @@ indexfile = ["""<!DOCTYPE html>
 <html>
     <head>
         <style type="text/css">
-            body { font-size: 150%; }
+            body { font-size: 150%; text-align: center;}
         </style>
     </head>
     <body>
@@ -27,7 +27,7 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
             page_name=lines["picid"]+".html"
             print(page_name)
             file=open("pages/"+page_name, "w+")
-            file.write("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<style type=\"text/css\">\r\n body { font-size: 150%; }\r\n </style>\r\n</head>\r\n<body>\r\n")
+            file.write("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<style type=\"text/css\">\r\n body { font-size: 150%; text-align: center; }\r\n </style>\r\n</head>\r\n<body>\r\n")
             if (lines["episode"].isnumeric()) == True:
                 file.write("<h3>" + lines["episode"] + ". " + lines["chinese_title"] + "</h3>\r\n")
                 indexfile.append("<a href=\"pages/" + lines["picid"] + ".html\">" + lines["episode"] + "." + lines["chinese_title"] + "</a><br />\r\n")
@@ -46,7 +46,7 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
                 file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a>・<a href=\"https://srgrafo.com/comic/" + lines["picid"] + "\">原版链接</a>・<a href=\"../index.html\">回目录</a></p>")
             if lines["music"]:
                 file.write("<p><a href=\"" + lines["music"] + "\">建议配乐</a></p>")
-            file.write("<div style=\"text-align:center;\"><img src=\"../img/" + lines["picid"] + ".png" "\"></div>")
+            file.write("<div><img src=\"../img/" + lines["picid"] + ".png" "\"></div>")
             if int(lines["picid"]) == 1:
                 file.write("")
             elif int(lines["picid"]) == 121:
