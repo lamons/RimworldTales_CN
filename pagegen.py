@@ -34,27 +34,34 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
             else:
                 file.write("<h3>" + lines["chinese_title"] + "</h3>\r\n")
                 indexfile.append("<a href=\"pages/" + lines["picid"] + ".html\">" + lines["chinese_title"] + "</a><br />\r\n")
+
             if int(lines["picid"]) == 1:
                 file.write("")
             elif int(lines["picid"]) == 121:
                 file.write("<p><a href=\"../pages/" + str(int(lines["picid"])-1) + ".html\">上一章</a>")
             else:
                 file.write("<p><a href=\"../pages/" + str(int(lines["picid"])-1) + ".html\">上一章</a>・")
+
             if int(lines["picid"]) == 121:
                 file.write("</p>")
             else:
                 file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a>・<a href=\"https://srgrafo.com/comic/" + lines["picid"] + "\">原版链接</a>・<a href=\"../index.html\">回目录</a></p>")
+
             if lines["music"]:
                 file.write("<p><a href=\"" + lines["music"] + "\">建议配乐</a></p>")
+
             file.write("<div><img src=\"../img/" + lines["picid"] + ".png" "\"></div>")
+
             if lines["comment"]:
                 file.write("<p style=\"font-size: 80%; margin: 0 20% 0 20%; text-align: left;\">" + lines["comment"] + "</p>")
+
             if int(lines["picid"]) == 1:
                 file.write("")
             elif int(lines["picid"]) == 121:
                 file.write("<p><a href=\"../pages/" + str(int(lines["picid"])-1) + ".html\">上一章</a>")
             else:
                 file.write("<p><a href=\"../pages/" + str(int(lines["picid"])-1) + ".html\">上一章</a>・")
+
             if int(lines["picid"]) == 121:
                 file.write("</p>")
             else:
