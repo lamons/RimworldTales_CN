@@ -66,7 +66,8 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
             if int(lines["picid"]) == 121:
                 file.write("</p>")
             else:
-                file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a></p>")
+                file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a></p>\r\n")
+            file.write("</body>\r\n</html>")
             file.close()
 
 indexfile.append("""	</body>
