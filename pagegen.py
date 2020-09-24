@@ -31,7 +31,7 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
             file.write("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<title>" + lines["episode"] + ". " + lines["chinese_title"] + "・Rimworld Tales 边缘世界物语</title>\r\n<style type=\"text/css\">\r\n body { font-size: 150%; text-align: center; }\r\n </style>\r\n</head>\r\n<body>\r\n")
             if (lines["episode"].isnumeric()) == True:
                 file.write("<h3>" + lines["episode"] + ". " + lines["chinese_title"] + "</h3>\r\n")
-                indexfile.append("<a href=\"pages/" + lines["picid"] + ".html\">" + lines["episode"] + "." + lines["chinese_title"] + "</a><br />\r\n")
+                indexfile.append("<a href=\"pages/" + lines["picid"] + ".html\">" + lines["episode"] + ". " + lines["chinese_title"] + "</a><br />\r\n")
             else:
                 file.write("<h3>" + lines["chinese_title"] + "</h3>\r\n")
                 indexfile.append("<a href=\"pages/" + lines["picid"] + ".html\">" + lines["chinese_title"] + "</a><br />\r\n")
