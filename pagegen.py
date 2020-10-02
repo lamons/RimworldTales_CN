@@ -46,7 +46,7 @@ with open('index.csv', newline='', encoding='utf-8-sig') as csvfile:
             if int(lines["picid"]) == 121:
                 file.write("</p>")
             else:
-                file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a>・<a href=\"https://srgrafo.com/comic/" + lines["picid"] + "\">原版链接</a>・<a href=\"../index.html\">回目录</a></p>")
+                file.write("<a href=\"../pages/" + str(int(lines["picid"])+1) + ".html\">下一章</a>・<a href=\"https://srgrafo.com/comic/RimworldTales/" + lines["picid"] + "\">原版链接</a>・<a href=\"../index.html\">回目录</a></p>")
 
             if lines["music"]:
                 file.write("<p><a href=\"" + lines["music"] + "\" target=\"_blank\">建议配乐</a></p>")
